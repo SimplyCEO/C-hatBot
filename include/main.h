@@ -12,4 +12,9 @@ typedef unsigned char bool;
 typedef unsigned short u16;
 typedef unsigned int u32;
 
+struct TwitchHeaders
+{
+  char client[255], bearer[255], oauth[255];
+};
+
 #endif

@@ -3,16 +3,19 @@ ifndef CC
 endif
 
 ifndef CFLAGS
-	CFLAGS := --std=c89 -g -Wall
+	CFLAGS := --std=c99 -g -Wall
 endif
 
 HEADERS := -I include/
-LIBRARIES :=
-
-FILES := src/main.c
+LIBRARIES := -lcurl
+FILES := src/main.c \
+				 src/api.c \
+				 src/tools.c
+BINARY := katherineai
 
 katherineai:
-	${CC} ${CFLAGS} ${HEADERS} ${LIBRARIES} ${FILES} -o katherineai
+	${CC} ${CFLAGS} ${HEADERS} ${LIBRARIES} ${FILES} -o ${BINARY}
 
 clean:
-	@rm katherineai || true
+	@rm ${BINARY} || true
+
