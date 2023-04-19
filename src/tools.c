@@ -35,6 +35,7 @@ int getFileInfo(char *fileKey, u8 fileType, char *fileLocation)
     {
       switch(buffer[i])
       {
+        case '#': stayForEver = false; break;
         case ' ': break;
         case '=': collectKey = true; break;
         case ',':
