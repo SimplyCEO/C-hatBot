@@ -17,10 +17,10 @@ int getFileInfo(char *fileKey, u8 fileType, char *fileLocation)
       strcpy(fileKey, "client-id");
     break;
     case BEARER_TOKEN:
-      strcpy(fileKey, "bearer");
+      strcpy(fileKey, "bearer-token");
     break;
     case OAUTH_TOKEN:
-      strcpy(fileKey, "oauth");
+      strcpy(fileKey, "oauth-token");
     break;
     default: break;
   }
