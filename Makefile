@@ -3,7 +3,7 @@ ifndef CC
 endif
 
 ifndef CFLAGS
-	CFLAGS := --std=c99 -g -Wall
+	CFLAGS := -std=c99 -g -Wall
 endif
 
 HEADERS := -I include/
@@ -13,7 +13,7 @@ FILES := src/main.c \
 				 src/tools.c
 BINARY := c-hatbot
 
-katherineai:
+c-hatbot:
 	${CC} ${CFLAGS} ${HEADERS} ${LIBRARIES} ${FILES} -o ${BINARY}
 
 clean:
