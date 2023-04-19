@@ -5,7 +5,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-int getFileInfo(char *fileKey, u8 fileType, char *fileLocation)
+bool setupFileLocation(const char *fileLocation)
+{
+  FILE *fileBuffer;
+
+  if(!(fileBuffer = fopen(fileLocation, "r")))
+    return false;
+
+  fclose(fileBuffer);
+
+  return true;
+}
+
+int getFileInfo(char *fileKey, u8 fileType, const char *fileLocation)
 {
   FILE *fileBuffer = fopen(fileLocation, "r");
   char buffer[255], value[48];

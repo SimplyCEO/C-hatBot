@@ -1,9 +1,9 @@
 #ifndef API_HEADER_FILE
 #define API_HEADER_FILE
 
-void getClientID(char *clientID, char *fileLocation);
-void getBearer(char *bearer, char *fileLocation);
-void getOAuth(char *oauth, char *fileLocation);
+void getClientID(char *clientID, const char *fileLocation);
+void getBearer(char *bearer, const char *fileLocation);
+void getOAuth(char *oauth, const char *fileLocation);
 
 enum FileTypes
 {

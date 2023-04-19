@@ -7,6 +7,6 @@ chatbot
 
 [B,b]uild
 
-# Secret OAuth
+# Secret credentials
 
-bot_info.txt
+c-hatbot.conf

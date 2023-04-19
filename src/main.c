@@ -11,10 +11,16 @@ int main(int argc, char *argv[])
 {
   CURL *curl = curl_easy_init();
   char *twitchAPI = "https://api.twitch.tv/helix/channels?broadcaster_id=145909736";
-  char *fileLocation = "bot_info.txt";
+  const char *fileLocation = "c-hatbot.conf";
   struct FileSettings settings;
   struct TwitchHeaders headers;
   struct curl_slist *list = NULL;
+
+  if(!setupFileLocation(fileLocation))
+  {
+    printf("ERROR: Configuration file does not exist.\n");
+    return 1;
+  }
 
   getClientID(settings.key.client, fileLocation);
   getBearer(settings.key.bearer, fileLocation);
@@ -27,7 +33,7 @@ int main(int argc, char *argv[])
 
   if(!curl)
   {
-    fprintf(stderr, "Initialisation error.\n");
+    printf("Initialisation error.\n");
     return 1;
   }
 
@@ -42,7 +48,7 @@ int main(int argc, char *argv[])
 
   if(result != CURLE_OK)
   {
-    fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(result));
+    printf("curl_easy_perform() failed: %s\n", curl_easy_strerror(result));
     return 1;
   }
 
