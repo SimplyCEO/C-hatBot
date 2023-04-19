@@ -11,7 +11,7 @@ LIBRARIES := -lcurl
 FILES := src/main.c \
 				 src/api.c \
 				 src/tools.c
-BINARY := katherineai
+BINARY := c-hatbot
 
 katherineai:
 	${CC} ${CFLAGS} ${HEADERS} ${LIBRARIES} ${FILES} -o ${BINARY}
