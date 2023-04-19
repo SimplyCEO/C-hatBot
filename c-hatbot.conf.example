@@ -1,0 +1,8 @@
+# This file need to be renamed to
+#         'c-hatbot.conf'
+#    in order to work properly
+
+# Twitch credentials
+client-id = 
+bearer-token = 
+oauth-token = 
